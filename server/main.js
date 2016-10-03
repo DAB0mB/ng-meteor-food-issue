@@ -1,17 +1,18 @@
 import {Meteor} from 'meteor/meteor';
-import {Person} from '../imports/collections';
+import {Food} from '../imports/collections';
+
 Meteor.startup(() => {
-    if (!Person.find().count()) {
-        Person.insert({name: "a"});
-        Person.insert({name: "b"});
-        Person.insert({name: "c"});
-        Person.insert({name: "d"});
-        Person.insert({name: "e"});
-    }
-});
-Meteor.publish('xxx', function () {
+  let userId;
 
-    console.log('subscribing');
-    return Person.find();
-});
+  Meteor.users.remove({});
+  Food.remove({});
 
+  userId = Meteor.users.insert({profile: {avatar: 'foo-avatar'}});
+  Food.insert({name: 'foo-name', owner: userId});
+
+  userId = Meteor.users.insert({profile: {avatar: 'bar-avatar'}});
+  Food.insert({name: 'bar-name', owner: userId});
+
+  userId = Meteor.users.insert({profile: {avatar: 'baz-avatar'}});
+  Food.insert({name: 'baz-name', owner: userId});
+});

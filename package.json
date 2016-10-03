@@ -1,5 +1,5 @@
 {
-  "name": "ng-meteor-subscribe-problem",
+  "name": "ng-meteor-food-issue",
   "private": true,
   "scripts": {
     "start": "meteor run"

@@ -1,4 +1,4 @@
-# Issue with subscriptions
+# Angular-Meteor food issue
 
 ```
 meteor npm install
@@ -7,7 +7,4 @@ meteor
 
 Open http://localhost:3000
 
-- Go into State A -> see `Loading...` then `Ready`
-- Go into State B -> see `Loading...` , but never ready
-
-works also if you start with State B
+See issue https://github.com/Urigo/angular-meteor/issues/1418.
